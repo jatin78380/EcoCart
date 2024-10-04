@@ -4,6 +4,7 @@
 import userRouter from './Routes/user.js'
 import productRouter from './Routes/product.js'
 import cartRouter from './Routes/cart.js'
+import addressRouter from './Routes/address.js'
  const app = express();
  
  app.use(express.json());
@@ -19,6 +20,9 @@ import cartRouter from './Routes/cart.js'
 
  //cart Router
  app.use('/api/cart',cartRouter)
+
+ //address Router
+ app.use('/api/address',addressRouter)
 
  mongoose.connect("",{dbName: "EcoCart"}).then(()=> console.log("Connected to MongoDB")).catch((err)=> console.log(err));
  const port = 3000;
