@@ -1,4 +1,4 @@
-import { Address } from "../Models/Address";
+import { Address } from "../Models/Address.js";
 
 export const addAddress = async (req,res) =>{
     let {fullName,address,city,state,country,pincode,phoneNumber} = req.body;
