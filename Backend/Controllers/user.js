@@ -26,7 +26,7 @@ export const login = async(req,res) =>{
         const validPassword = await bcrypt.compare(password,user.password);
         if(!validPassword) return res.json({message: "Invalid Credentials", success:false});
 
-        const token = jwt.sigm({userId:user._id},"eco@#$_!#&",{
+        const token = jwt.sign({userId:user._id},"eco@#$_!#&",{
             expiresIn: "24h"
         }) //process.env.JWT_SECRET later
         res.json({message: `Welcome ${user.name}`,token, success:true});
